@@ -5,8 +5,8 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors()); // Enable CORS for all routes and origins
-app.use(express.json()); // To parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
 
 // Logging middleware
 app.use((req, res, next) => {
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// In-memory storage for tasks (in production, use a database)
+
 let tasks = [
     {
         id: 1,
@@ -238,9 +238,9 @@ app.use((req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`✅ Server running on http://localhost:${PORT}`);
-    console.log(`📝 Task Manager API is ready!`);
-    console.log(`🔗 Try: GET http://localhost:${PORT}/api/tasks`);
+    console.log(` Server running on http://localhost:${PORT}`);
+    console.log(` Task Manager API is ready!`);
+    console.log(` Try: GET http://localhost:${PORT}/api/tasks`);
 });
 
 module.exports = app;
